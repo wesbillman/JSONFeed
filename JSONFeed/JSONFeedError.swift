@@ -10,6 +10,5 @@ public enum JSONFeedError: Error {
     case invalidVersion
     case invalidTitle
     case invalidData
-    case invalidJSON
     case invalidString
 }

@@ -2,3 +2,5 @@
 [![Codecov](https://img.shields.io/codecov/c/github/wesbillman/JSONFeed.svg)](https://codecov.io/gh/wesbillman/JSONFeed)
 
 ### JSONFeed
+
+Swift parsing for [JSON Feed](https://jsonfeed.org/)

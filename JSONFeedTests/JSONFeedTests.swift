@@ -23,6 +23,22 @@ class JSONFeedTests: XCTestCase {
         }
     }
 
+    func testInvalidData() {
+        guard let data = "bogus".data(using: .utf8) else {
+            XCTFail()
+            return
+        }
+        XCTAssertThrowsError(try JSONFeed(data: data)) { error in
+            XCTAssertEqual(error as? JSONFeedError, JSONFeedError.invalidData)
+        }
+    }
+
+    func testInvalidString() {
+        XCTAssertThrowsError(try JSONFeed(string: "")) { error in
+            XCTAssertEqual(error as? JSONFeedError, JSONFeedError.invalidString)
+        }
+    }
+
     func testEmptyFeed() {
         let json = ["version": url, "title": text]
         let feed = try? JSONFeed(json: json)
@@ -60,5 +76,25 @@ class JSONFeedTests: XCTestCase {
         XCTAssertEqual(feed?.hubs?.count, 1)
         XCTAssertEqual(feed?.hubs?.first?.type, text)
         XCTAssertEqual(feed?.hubs?.first?.url.absoluteString, url)
+    }
+
+    func testFeedFromData() {
+        let json = ["version": url, "title": text]
+        guard let data = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) else {
+            XCTFail()
+            return
+        }
+
+        let feed = try? JSONFeed(data: data)
+        XCTAssertEqual(feed?.version.absoluteString, url)
+        XCTAssertEqual(feed?.title, text)
+    }
+
+    func testFeedFromString() {
+        let string = "{\"version\": \"\(url)\", \"title\": \"\(text)\"}"
+
+        let feed = try? JSONFeed(string: string)
+        XCTAssertEqual(feed?.version.absoluteString, url)
+        XCTAssertEqual(feed?.title, text)
     }
 }

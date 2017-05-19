@@ -52,4 +52,19 @@ public class JSONFeed {
 
         self.hasExpired = json["expired"] as? Bool ?? false
     }
+
+    public convenience init(data: Data) throws {
+        let result = try? JSONSerialization.jsonObject(with: data, options: [])
+        guard let json = result as? [AnyHashable: Any] else {
+            throw JSONFeedError.invalidData
+        }
+        try self.init(json: json)
+    }
+
+    public convenience init(string: String) throws {
+        guard let data = string.data(using: .utf8), !data.isEmpty else {
+            throw JSONFeedError.invalidString
+        }
+        try self.init(data: data)
+    }
 }
