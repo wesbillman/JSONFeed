@@ -7,9 +7,25 @@ import XCTest
 @testable import JSONFeed
 
 class JSONFeedTests: XCTestCase {
-    func testShouldThrowInvalidVersion() {
+    let version = "https://jsonfeed.org/version/1"
+    let title = "Test Title"
+    func testInvalidVersion() {
         XCTAssertThrowsError(try JSONFeed(json: [:])) { error in
             XCTAssertEqual(error as? JSONFeedError, JSONFeedError.invalidVersion)
         }
+    }
+
+    func testInvalidTitle() {
+        let json = ["version": version]
+        XCTAssertThrowsError(try JSONFeed(json: json)) { error in
+            XCTAssertEqual(error as? JSONFeedError, JSONFeedError.invalidTitle)
+        }
+    }
+
+    func testEmptyFeed() {
+        let json = ["version": version, "title": title]
+        let feed = try? JSONFeed(json: json)
+        XCTAssertEqual(feed?.version.absoluteString, version)
+        XCTAssertEqual(feed?.title, title)
     }
 }
