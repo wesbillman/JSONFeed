@@ -1,0 +1,26 @@
+disabled_rules: # rule identifiers to exclude from running
+  - statement_position
+  - cyclomatic_complexity
+  - function_parameter_count
+  - line_length
+  - type_name
+
+included: # paths to include during linting.
+  - JSONFeed
+  - JSONFeedTest
+
+file_length:
+  - 400 # warning
+  - 450 # error
+
+function_body_length:
+  - 300 # warning
+  - 400 # error
+
+type_body_length:
+  - 500 # warning
+  - 600 # error
+
+variable_name:
+  min_length:
+    warning: 1
