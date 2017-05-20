@@ -29,14 +29,14 @@ class AttachmentTests: XCTestCase {
             "url": url,
             "mime_type": text,
             "title": text,
-            "size": size,
-            "duration": duration,
+            "size_in_bytes": size,
+            "duration_in_seconds": duration,
         ]
         let attachment = try? Attachment(json: json)
         XCTAssertEqual(attachment?.url.absoluteString, url)
         XCTAssertEqual(attachment?.mimeType, text)
         XCTAssertEqual(attachment?.title, text)
-        XCTAssertEqual(attachment?.size, size)
-        XCTAssertEqual(attachment?.duration, duration)
+        XCTAssertEqual(attachment?.bytes, size)
+        XCTAssertEqual(attachment?.seconds, duration)
     }
 }

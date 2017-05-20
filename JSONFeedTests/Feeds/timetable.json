@@ -1,0 +1,66 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Timetable",
+    "home_page_url": "http://timetable.manton.org/",
+    "items": [{
+            "id": "http://timetable.manton.org/2017/04/episode-45-launch-week/",
+            "url": "http://timetable.manton.org/2017/04/episode-45-launch-week/",
+            "title": "Episode 45: Launch week",
+            "content_html": "Iâ€™m rolling out early access to Micro.blog this week. I talk about how the first 2 daysÂ have gone, mistakes with TestFlight, and what to do next.",
+            "date_published": "2017-04-26T01:09:45+00:00",
+            "attachments": [{
+                "url": "http://timetable.manton.org/podcast-download/139/episode-45-launch-week.mp3",
+                "mime_type": "audio/mpeg",
+                "size_in_bytes": 5236920
+            }]
+        },
+        {
+            "id": "http://timetable.manton.org/2017/04/episode-44-disappoint-some-people/",
+            "url": "http://timetable.manton.org/2017/04/episode-44-disappoint-some-people/",
+            "title": "Episode 44: Disappoint some people",
+            "content_html": "I look back at Katy Perryâ€™s performance at the Grammys. Why itâ€™s okay to make a political statement and risk disappointing some fans.",
+            "date_published": "2017-04-20T16:59:09+00:00",
+            "attachments": [{
+                "url": "http://timetable.manton.org/podcast-download/136/episode-44-disappoint-some-people.mp3",
+                "mime_type": "audio/mpeg",
+                "size_in_bytes": 3590496
+            }]
+        },
+        {
+            "id": "http://timetable.manton.org/2017/04/episode-43-default-themes/",
+            "url": "http://timetable.manton.org/2017/04/episode-43-default-themes/",
+            "title": "Episode 43: Default themes",
+            "content_html": "Finalizing the default themes for Micro.blog, why theyâ€™re based on Jekyll, and a thousandÂ beta testers.",
+            "date_published": "2017-04-18T18:24:39+00:00",
+            "attachments": [{
+                "url": "http://timetable.manton.org/podcast-download/134/episode-43-default-themes.mp3",
+                "mime_type": "audio/mpeg",
+                "size_in_bytes": 4400851
+            }]
+        },
+        {
+            "id": "http://timetable.manton.org/2017/04/episode-42-officially-announced/",
+            "url": "http://timetable.manton.org/2017/04/episode-42-officially-announced/",
+            "title": "Episode 42: Officially announced",
+            "content_html": "Today I sent a Kickstarter update about the rollout date. I also talk about the invite code system, the book, and stickers.",
+            "date_published": "2017-04-17T22:34:14+00:00",
+            "attachments": [{
+                "url": "http://timetable.manton.org/podcast-download/132/episode-42-officially-announced.mp3",
+                "mime_type": "audio/mpeg",
+                "size_in_bytes": 7436651
+            }]
+        },
+        {
+            "id": "http://timetable.manton.org/2017/04/episode-41-final-rollout-date/",
+            "url": "http://timetable.manton.org/2017/04/episode-41-final-rollout-date/",
+            "title": "Episode 41: Final rollout date",
+            "content_html": "Wrapping up a busy week, I realize thereâ€™s too much going on to start the Micro.blog rollout next week. It will be the following week, April 24th.",
+            "date_published": "2017-04-15T02:11:02+00:00",
+            "attachments": [{
+                "url": "http://timetable.manton.org/podcast-download/129/episode-41-final-rollout-date.mp3",
+                "mime_type": "audio/mpeg",
+                "size_in_bytes": 3796695
+            }]
+        }
+    ]
+}

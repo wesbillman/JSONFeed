@@ -15,8 +15,8 @@ public struct Item {
     public let summary: String?
     public let image: URL?
     public let banner: URL?
-    public let published: String?
-    public let modified: String?
+    public let published: Date
+    public let modified: Date?
     public let author: Author?
     public let tags: [String]?
     public let attachments: [Attachment]
@@ -35,8 +35,18 @@ public struct Item {
         self.summary = json["summary"] as? String
         self.image = URL(string: json["image"] as? String)
         self.banner = URL(string: json["banner_image"] as? String)
-        self.published = json["published"] as? String
-        self.modified = json["modified"] as? String
+
+        if let dateString = json["date_published"] as? String, let date = ISO8601DateFormatter().date(from: dateString) {
+            self.published = date
+        } else {
+            self.published = Date()
+        }
+
+        if let dateString = json["date_modified"] as? String, let date = ISO8601DateFormatter().date(from: dateString) {
+            self.modified = date
+        } else {
+            self.modified = Date()
+        }
 
         if let authorJSON = json["author"] as? [AnyHashable: Any] {
             self.author = Author(json: authorJSON)

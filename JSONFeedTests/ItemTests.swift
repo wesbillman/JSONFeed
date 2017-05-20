@@ -9,6 +9,7 @@ import XCTest
 class ItemTests: XCTestCase {
     let url = "https://jsonfeed.org/version/1"
     let text = "Some Text"
+    let date = "2017-04-26T01:09:45+00:00"
 
     func testInvalidURL() {
         XCTAssertThrowsError(try Item(json: [:])) { error in
@@ -27,8 +28,8 @@ class ItemTests: XCTestCase {
             "summary": text,
             "image": url,
             "banner_image": url,
-            "published": text,
-            "modified": text,
+            "date_published": date,
+            "date_modified": date,
             "author": ["name": text, "url": url, "avatar": url],
             "tags": ["one", "two"],
             "attachments": [["url": url, "mime_type": text]]
@@ -42,6 +43,8 @@ class ItemTests: XCTestCase {
         XCTAssertEqual(item?.html, text)
         XCTAssertEqual(item?.image?.absoluteString, url)
         XCTAssertEqual(item?.banner?.absoluteString, url)
+        XCTAssertEqual(item?.published, ISO8601DateFormatter().date(from: date))
+        XCTAssertEqual(item?.modified, ISO8601DateFormatter().date(from: date))
         XCTAssertEqual(item?.author?.name, text)
         XCTAssertEqual(item?.author?.url?.absoluteString, url)
         XCTAssertEqual(item?.author?.avatar?.absoluteString, url)
