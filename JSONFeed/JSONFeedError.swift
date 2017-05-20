@@ -9,6 +9,8 @@ public enum JSONFeedError: Error {
     case notAJSONFeed
     case invalidVersion
     case invalidTitle
+    case invalidURL
+    case invalidMimeType
     case invalidData
     case invalidString
 }

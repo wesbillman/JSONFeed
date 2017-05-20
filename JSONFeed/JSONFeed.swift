@@ -18,6 +18,7 @@ public class JSONFeed {
     public let author: Author?
     public let hasExpired: Bool
     public let hubs: [Hub]?
+    public let items: [Item]
 
     public init(json: [AnyHashable: Any]) throws {
         guard let version = URL(string: json["version"] as? String) else {
@@ -48,6 +49,14 @@ public class JSONFeed {
             self.hubs = hubsJSON.flatMap(Hub.init)
         } else {
             self.hubs = nil
+        }
+
+        if let itemsJSON = json["items"] as? [[AnyHashable: Any]] {
+            self.items = itemsJSON.flatMap {
+                try? Item(json: $0)
+            }
+        } else {
+            self.items = []
         }
 
         self.hasExpired = json["expired"] as? Bool ?? false
