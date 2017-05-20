@@ -58,7 +58,8 @@ class JSONFeedTests: XCTestCase {
             "icon": url,
             "favicon": url,
             "author": ["name": text, "url": url, "avatar": url],
-            "hubs": [["type": text, "url": url]]
+            "hubs": [["type": text, "url": url]],
+            "items": [["id": text]]
         ]
         let feed = try? JSONFeed(json: json)
         XCTAssertEqual(feed?.version.absoluteString, url)
@@ -76,6 +77,8 @@ class JSONFeedTests: XCTestCase {
         XCTAssertEqual(feed?.hubs?.count, 1)
         XCTAssertEqual(feed?.hubs?.first?.type, text)
         XCTAssertEqual(feed?.hubs?.first?.url.absoluteString, url)
+        XCTAssertEqual(feed?.items.count, 1)
+        XCTAssertEqual(feed?.items.first?.id, text)
     }
 
     func testFeedFromData() {

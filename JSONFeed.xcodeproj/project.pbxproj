@@ -21,6 +21,7 @@
 		CB3BE7EA1ECFB7DC008D884F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BE7E91ECFB7DC008D884F /* Item.swift */; };
 		CB3BE7EC1ECFB8EB008D884F /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BE7EB1ECFB8EB008D884F /* Attachment.swift */; };
 		CB3BE7EE1ECFBF9E008D884F /* AttachmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BE7ED1ECFBF9E008D884F /* AttachmentTests.swift */; };
+		CB3BE7F01ECFC124008D884F /* ItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BE7EF1ECFC124008D884F /* ItemTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		CB3BE7E91ECFB7DC008D884F /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		CB3BE7EB1ECFB8EB008D884F /* Attachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
 		CB3BE7ED1ECFBF9E008D884F /* AttachmentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentTests.swift; sourceTree = "<group>"; };
+		CB3BE7EF1ECFC124008D884F /* ItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				CB3BE7ED1ECFBF9E008D884F /* AttachmentTests.swift */,
 				CB3BE7E41ECFA4C8008D884F /* AuthorTests.swift */,
 				CB3BE7E21ECFA409008D884F /* HubTests.swift */,
+				CB3BE7EF1ECFC124008D884F /* ItemTests.swift */,
 				CB3BE7CA1ECF58E9008D884F /* JSONFeedTests.swift */,
 				CB3BE7E61ECFAA43008D884F /* Extensions */,
 			);
@@ -280,6 +283,7 @@
 			files = (
 				CB3BE7CB1ECF58E9008D884F /* JSONFeedTests.swift in Sources */,
 				CB3BE7E81ECFAA53008D884F /* URLExtensionsTests.swift in Sources */,
+				CB3BE7F01ECFC124008D884F /* ItemTests.swift in Sources */,
 				CB3BE7E31ECFA409008D884F /* HubTests.swift in Sources */,
 				CB3BE7E51ECFA4C8008D884F /* AuthorTests.swift in Sources */,
 				CB3BE7EE1ECFBF9E008D884F /* AttachmentTests.swift in Sources */,

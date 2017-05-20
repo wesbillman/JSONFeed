@@ -23,18 +23,18 @@ public struct Item {
 
     public init(json: [AnyHashable: Any]) throws {
         guard let id = json["id"] as? String else {
-            throw JSONFeedError.invalidURL
+            throw JSONFeedError.invalidID
         }
 
         self.id = id
         self.url = URL(string: json["url"] as? String)
         self.external = URL(string: json["external_url"] as? String)
         self.title = json["title"] as? String
-        self.text = json["text"] as? String
-        self.html = json["html"] as? String
+        self.text = json["content_text"] as? String
+        self.html = json["content_html"] as? String
         self.summary = json["summary"] as? String
         self.image = URL(string: json["image"] as? String)
-        self.banner = URL(string: json["banner"] as? String)
+        self.banner = URL(string: json["banner_image"] as? String)
         self.published = json["published"] as? String
         self.modified = json["modified"] as? String
 
