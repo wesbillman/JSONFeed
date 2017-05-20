@@ -60,3 +60,32 @@ let feed = try? JSONFeed(data: data)
 let string = <some utf8 json string>
 let feed = try? JSONFeed(string: string)
 ```
+### Reading from a feed via URLSession
+
+Using default configuration and URLSession
+```swift
+let reader = JSONFeedReader()
+reader.read(string: "https://jsonfeed.org/feed.json") { (feed, error) in
+    if let error = error {
+        //bad things happened
+    }
+
+    if let feed = feed {
+        //good things happened
+    }
+}
+```
+
+Using custom implemenation of URLSession (example: for unit testing)
+```swift
+let reader = JSONFeedReader(session: SomeCustomURLSession)
+reader.read(string: "https://jsonfeed.org/feed.json") { (feed, error) in
+    if let error = error {
+        //bad things happened
+    }
+
+    if let feed = feed {
+        //good things happened
+    }
+}
+```
