@@ -3,9 +3,9 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![SwiftPM Compatible](https://img.shields.io/badge/SwiftPM-Compatible-brightgreen.svg)
 
-### JSONFeed
+# JSONFeed
 
-Swift parsing for [JSON Feed](https://jsonfeed.org/)
+Swift parsing for [JSON Feed](https://jsonfeed.org/) [Spec](https://jsonfeed.org/version/1)
 
 ## Installation
 
@@ -35,3 +35,28 @@ dependencies: [
 
 ### Manually
 Add all the files from `JSONFeed/JSONFeed` to your project
+
+## Usage
+
+> See [JSONFeedTests](https://github.com/wesbillman/JSONFeed/blob/master/JSONFeedTests/JSONFeedTests.swift) for detailed usage examples
+
+#### Load a feed from a dictionary
+
+```swift
+let dictionary = <some feed dictionary>
+let feed = try? JSONFeed(json: dictionary)
+```
+
+#### Load a feed from data
+
+```swift
+let data = <some feed data>
+let feed = try? JSONFeed(data: data)
+```
+
+#### Load a feed from a json ut8f string
+
+```swift
+let string = <some utf8 json string>
+let feed = try? JSONFeed(string: string)
+```
