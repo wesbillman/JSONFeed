@@ -24,7 +24,7 @@ public struct Attachment {
         self.url = url
         self.mimeType = mimeType
         self.title = json["title"] as? String
-        self.size = json["title"] as? Int
-        self.duration = json["title"] as? Int
+        self.size = json["size"] as? Int
+        self.duration = json["duration"] as? Int
     }
 }
