@@ -26,6 +26,10 @@
 		CB3BE7F51ED0AF73008D884F /* timetable.json in Resources */ = {isa = PBXBuildFile; fileRef = CB3BE7F41ED0AF73008D884F /* timetable.json */; };
 		CB3BE7F71ED0B569008D884F /* simple.json in Resources */ = {isa = PBXBuildFile; fileRef = CB3BE7F61ED0B569008D884F /* simple.json */; };
 		CB3BE7F91ED0B579008D884F /* SimpleFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BE7F81ED0B579008D884F /* SimpleFeedTests.swift */; };
+		CB3BE7FB1ED0BB3E008D884F /* JSONFeedReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BE7FA1ED0BB3E008D884F /* JSONFeedReader.swift */; };
+		CB3BE7FF1ED0BF53008D884F /* JSONFeedReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BE7FE1ED0BF53008D884F /* JSONFeedReaderTests.swift */; };
+		CB3BE8021ED0BFFF008D884F /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BE8011ED0BFFF008D884F /* MockURLSession.swift */; };
+		CB3BE8041ED0C26B008D884F /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BE8031ED0C26B008D884F /* MockURLSessionDataTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,10 @@
 		CB3BE7F41ED0AF73008D884F /* timetable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timetable.json; sourceTree = "<group>"; };
 		CB3BE7F61ED0B569008D884F /* simple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = simple.json; sourceTree = "<group>"; };
 		CB3BE7F81ED0B579008D884F /* SimpleFeedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleFeedTests.swift; sourceTree = "<group>"; };
+		CB3BE7FA1ED0BB3E008D884F /* JSONFeedReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFeedReader.swift; sourceTree = "<group>"; };
+		CB3BE7FE1ED0BF53008D884F /* JSONFeedReaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFeedReaderTests.swift; sourceTree = "<group>"; };
+		CB3BE8011ED0BFFF008D884F /* MockURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		CB3BE8031ED0C26B008D884F /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +119,7 @@
 				CB3BE7E91ECFB7DC008D884F /* Item.swift */,
 				CB3BE7DA1ECF593B008D884F /* JSONFeed.swift */,
 				CB3BE7DB1ECF593B008D884F /* JSONFeedError.swift */,
+				CB3BE7FA1ED0BB3E008D884F /* JSONFeedReader.swift */,
 				CB3BE7D71ECF593B008D884F /* Extensions */,
 			);
 			path = JSONFeed;
@@ -119,14 +128,16 @@
 		CB3BE7C91ECF58E9008D884F /* JSONFeedTests */ = {
 			isa = PBXGroup;
 			children = (
-				CB3BE7F11ED0AB1C008D884F /* Feeds */,
 				CB3BE7CC1ECF58E9008D884F /* Info.plist */,
 				CB3BE7ED1ECFBF9E008D884F /* AttachmentTests.swift */,
 				CB3BE7E41ECFA4C8008D884F /* AuthorTests.swift */,
 				CB3BE7E21ECFA409008D884F /* HubTests.swift */,
 				CB3BE7EF1ECFC124008D884F /* ItemTests.swift */,
+				CB3BE7FE1ED0BF53008D884F /* JSONFeedReaderTests.swift */,
 				CB3BE7CA1ECF58E9008D884F /* JSONFeedTests.swift */,
 				CB3BE7E61ECFAA43008D884F /* Extensions */,
+				CB3BE7F11ED0AB1C008D884F /* Feeds */,
+				CB3BE8001ED0BFF3008D884F /* Mocks */,
 			);
 			path = JSONFeedTests;
 			sourceTree = "<group>";
@@ -156,6 +167,15 @@
 				CB3BE7F21ED0ADB5008D884F /* TimetableFeedTests.swift */,
 			);
 			path = Feeds;
+			sourceTree = "<group>";
+		};
+		CB3BE8001ED0BFF3008D884F /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CB3BE8011ED0BFFF008D884F /* MockURLSession.swift */,
+				CB3BE8031ED0C26B008D884F /* MockURLSessionDataTask.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB3BE7FB1ED0BB3E008D884F /* JSONFeedReader.swift in Sources */,
 				CB3BE7DC1ECF593B008D884F /* Author.swift in Sources */,
 				CB3BE7EC1ECFB8EB008D884F /* Attachment.swift in Sources */,
 				CB3BE7DD1ECF593B008D884F /* URLExtensions.swift in Sources */,
@@ -304,12 +325,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB3BE7CB1ECF58E9008D884F /* JSONFeedTests.swift in Sources */,
+				CB3BE7FF1ED0BF53008D884F /* JSONFeedReaderTests.swift in Sources */,
 				CB3BE7F91ED0B579008D884F /* SimpleFeedTests.swift in Sources */,
 				CB3BE7E81ECFAA53008D884F /* URLExtensionsTests.swift in Sources */,
 				CB3BE7F01ECFC124008D884F /* ItemTests.swift in Sources */,
+				CB3BE8041ED0C26B008D884F /* MockURLSessionDataTask.swift in Sources */,
 				CB3BE7F31ED0ADB5008D884F /* TimetableFeedTests.swift in Sources */,
 				CB3BE7E31ECFA409008D884F /* HubTests.swift in Sources */,
 				CB3BE7E51ECFA4C8008D884F /* AuthorTests.swift in Sources */,
+				CB3BE8021ED0BFFF008D884F /* MockURLSession.swift in Sources */,
 				CB3BE7EE1ECFBF9E008D884F /* AttachmentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
