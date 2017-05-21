@@ -13,7 +13,7 @@ public enum JSONFeedReaderError: Error {
 public class JSONFeedReader {
     private let session: URLSession
 
-    init(session: URLSession = URLSession(configuration: URLSessionConfiguration.default)) {
+    public init(session: URLSession = URLSession(configuration: URLSessionConfiguration.default)) {
         self.session = session
     }
 
