@@ -46,15 +46,14 @@ public class JSONFeed {
         }
 
         if let hubsJSON = json["hubs"] as? [[AnyHashable: Any]] {
-            self.hubs = hubsJSON.flatMap(Hub.init)
+//            self.hubs = hubsJSON.flatMap(Hub.init)
+            self.hubs = hubsJSON.compactMap { Hub(json: $0) }
         } else {
             self.hubs = nil
         }
 
         if let itemsJSON = json["items"] as? [[AnyHashable: Any]] {
-            self.items = itemsJSON.flatMap {
-                try? Item(json: $0)
-            }
+            self.items = itemsJSON.compactMap { try? Item(json: $0) }
         } else {
             self.items = []
         }
