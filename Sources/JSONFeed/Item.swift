@@ -55,15 +55,13 @@ public struct Item {
         }
 
         if let tagsJSON = json["tags"] as? [String] {
-            self.tags = tagsJSON.flatMap(String.init)
+            self.tags = tagsJSON
         } else {
             self.tags = nil
         }
 
         if let attachmentsJSON = json["attachments"] as? [[AnyHashable: Any]] {
-            self.attachments = attachmentsJSON.flatMap {
-                try? Attachment(json: $0)
-            }
+            self.attachments = attachmentsJSON.compactMap { try? Attachment(json: $0) }
         } else {
             self.attachments = []
         }

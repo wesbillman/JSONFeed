@@ -8,11 +8,11 @@ import XCTest
 
 class TimetableFeedTests: XCTestCase {
     func testLoadingTimelineFeed() {
-        guard let url = Bundle(for: type(of: self)).url(forResource: "timetable", withExtension: "json") else {
+        guard let path = Bundle.module.path(forResource: "timetable", ofType: "json") else {
             XCTFail("json file does not exist")
             return
         }
-        let feed = try? JSONFeed(data: Data(contentsOf: url))
+        let feed = try? JSONFeed(data: Data(contentsOf: URL(fileURLWithPath: path)))
         XCTAssertEqual(feed?.version.absoluteString, "https://jsonfeed.org/version/1")
         XCTAssertEqual(feed?.title, "Timetable")
         XCTAssertEqual(feed?.homePage?.absoluteString, "http://timetable.manton.org/")
